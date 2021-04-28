@@ -1,7 +1,8 @@
 #include "matrix.h"
 
-Matrix::Matrix(unsigned int size)
+Matrix::Matrix(unsigned int s)
 {
+    size = s;
     data.resize(size);
     for (size_t i = 0; i < size; i++)
     {

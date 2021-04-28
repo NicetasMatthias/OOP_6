@@ -3,8 +3,11 @@
 
 #include <QWidget>
 #include <graph.h>
+#include <view.h>
 #include <QFile>
 #include <QFileDialog>
+#include <QMessageBox>
+#include <QTextStream>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Interface; }
@@ -16,12 +19,15 @@ class Interface : public QWidget
 
 public:
     Graph g;
+    View *v;
 
     Interface(QWidget *parent = nullptr);
     ~Interface();
 
 private slots:
     void on_pushButton_file_clicked();
+
+    void on_pushButton_view_clicked();
 
 private:
     Ui::Interface *ui;

@@ -6,6 +6,7 @@
 class Matrix
 {
 public:
+    unsigned int size;
     Matrix(unsigned int);
     ~Matrix();
     QVector < QVector<bool> > data;
