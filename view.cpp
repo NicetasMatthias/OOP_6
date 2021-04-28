@@ -61,7 +61,7 @@ void View::paintEvent (QPaintEvent *event)
 
                 QPointF *arrow = new QPointF[3];
 
-                if (abs(dy)<1)
+                if ((abs(dy)<1)||(abs(dx)<1))
                 {
                     dyp=dx;
                     dxp=dy;
