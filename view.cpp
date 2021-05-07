@@ -3,10 +3,8 @@
 
 View::View(Graph* p)
 {
-    //setAttribute(Qt::WA_DeleteOnClose);
     g=p;
     ui->setupUi(this);
-    //repaint();
 }
 
 View::~View()

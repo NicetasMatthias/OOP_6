@@ -20,7 +20,7 @@ void Interface::on_pushButton_file_clicked()
     QString tmp;
     tmp = QFileDialog::getOpenFileName(this,
                                  "Укажите файл с описание графа",
-                                 "../OOP_6/data",
+                                 ".",
                                  "*");
     ui->lineEdit_path->setText(tmp);
 }
@@ -40,20 +40,14 @@ void Interface::on_pushButton_view_clicked()
         QMessageBox::warning(this,"Ошибка","Не удалось открыть файл для чтения");
         return;
     }
-    //QTextStream in(&f);
-    //if (in.atEnd())
     if (f.atEnd())
     {
         QMessageBox::warning(this,"Ошибка","Файл пустой");
         return;
     }
-    //tmp = in.readLine();
-    //qDebug() << "tmp считался: " << tmp;
-    //size = tmp.toInt();
     tmp = f.readLine();
     qDebug() << "tmp считался: " << tmp;
     size = tmp.toInt();
-    //in >> size;
     if (size<=0)
     {
         QMessageBox::warning(this,"Ошибка","В файле указаны некорректные данные");
@@ -103,20 +97,4 @@ void Interface::on_pushButton_view_clicked()
         v->show();
         qDebug() << "показываем новое окно";
     }
-
-
-    /*
-
-        if (v->isVisible())
-        {
-            qDebug() << "пытаемся закрыть старое окно";
-            v->close();
-            qDebug() << "закрыли старое окно";
-        }
-    qDebug() << "пытаемся создать новое окно";
-    v = new View(&g);
-    qDebug() << "пытаемся показать новое окно";
-    v->show();
-    qDebug() << "показали новое окно";
-    */
 }
